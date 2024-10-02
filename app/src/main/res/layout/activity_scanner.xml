@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Scanner">
+
+    <!-- ImageView at the top for displaying captured image -->
+    <ImageView
+        android:id="@+id/photoImage"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:contentDescription="Captured Image" />
+
+
+    <!-- Button to take a picture or select from gallery -->
+    <Button
+        android:id="@+id/takeSnapButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Take a Snap!"
+        android:textSize="18sp"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/photoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button to detect text in the image -->
+    <Button
+        android:id="@+id/detectButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Detect Text"
+        android:textSize="18sp"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/takeSnapButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ScrollView to contain detected text -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/detectButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/detectedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:text="Detected text will appear here."
+            android:scrollbars="vertical" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
